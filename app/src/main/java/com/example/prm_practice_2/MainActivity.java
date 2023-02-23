@@ -13,29 +13,35 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.prm_practice_2.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        @SuppressLint("WrongViewCast") TextView textView = findViewById(R.id.Consent);
-        ImageView imageView = findViewById(R.id.stars);
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        //Инициализация TextView и ImageView строковым и картинкой с помощью ViewBinding
+        TextView textView = binding.Consent;
+        ImageView imageView = binding.stars;
         String text = getString(R.string.Consent);
         Drawable drawable = getResources().getDrawable(R.drawable.free_icon_font_sparkles_6854012);
         textView.setText(text);
         imageView.setImageDrawable(drawable);
 
-        // Программное задание метода обработчика событий
-        @SuppressLint("WrongViewCast") Button button = findViewById(R.id.Consent_);
-        button.setOnClickListener(new View.OnClickListener() {
+        //Программное задание метода обработчика событий с помощью ViewBinding
+        binding.ConsentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ButtonConsentClickHandler(view);
             }
         });
+
     }
 
-    //Декларативное задание метода обработчика событий
+    //Декларативное задание метода обработчика событий с помощью ViewBinding
     public void ButtonConsentClickHandler (View view){
         Log.d(TAG, "Click is saved");
     }

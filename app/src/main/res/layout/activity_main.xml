@@ -229,15 +229,17 @@
             android:text="@string/Consent"/>
 
         <ImageButton
-            android:id="@+id/Consent_"
+            android:id="@+id/ConsentButton"
             android:layout_width="@dimen/button_margin_width"
             android:layout_height="@dimen/button_margin_height"
             android:layout_alignBottom="@id/Consent"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginBottom="0dp"
             android:layout_toEndOf="@id/Consent"
             android:layout_toRightOf="@id/Consent"
-            android:contentDescription="@string/app_name"
             android:backgroundTint="@color/Salmon"
+            android:contentDescription="@string/app_name"
             android:onClick="ButtonConsentClickHandler"
             app:srcCompat="@drawable/free_icon_font_check_3917084" />
 
