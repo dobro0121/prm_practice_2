@@ -238,6 +238,7 @@
             android:layout_toRightOf="@id/Consent"
             android:contentDescription="@string/app_name"
             android:backgroundTint="@color/Salmon"
+            android:onClick="ButtonConsentClickHandler"
             app:srcCompat="@drawable/free_icon_font_check_3917084" />
 
     </RelativeLayout>
