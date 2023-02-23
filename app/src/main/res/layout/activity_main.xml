@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/Salmon"
     tools:context=".MainActivity">
 
 
@@ -39,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-
+                android:textColor="@color/Purple"
                 android:text="Главная" />
 
 
@@ -66,7 +66,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Кинотеатры"
-
+                android:textColor="@color/Purple"
                 android:gravity="center"/>
 
 
@@ -91,7 +91,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Билеты"
-
+                android:textColor="@color/Purple"
                 android:gravity="center"/>
 
 
@@ -116,7 +116,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Профиль"
-
+                android:textColor="@color/Purple"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -141,8 +141,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="30dp"
-            android:text="Добро пожаловать!"
-
+            android:textStyle="bold"
+            android:text="@string/Welcome"
+            android:textColor="@color/DarkRed"
             android:layout_marginTop="30dp"
             ></TextView>
 
@@ -155,8 +156,8 @@
             android:layout_marginTop="50dp"
             android:textSize="20dp"
             android:textStyle="bold"
-
-            android:text="Введите имя" />
+            android:textColor="@color/DarkRed"
+            android:text="@string/Name" />
 
         <EditText
             android:id="@+id/Name_"
@@ -167,6 +168,7 @@
             android:layout_marginTop="50dp"
             android:layout_toEndOf="@+id/Name"
             android:layout_toRightOf="@id/Name"
+            android:textColor="@color/DarkRed"
             android:minHeight="48dp"></EditText>
 
         <TextView
@@ -178,13 +180,14 @@
             android:layout_marginTop="50dp"
             android:textSize="20dp"
             android:textStyle="bold"
-
-            android:text="Введите Email" />
+            android:textColor="@color/DarkRed"
+            android:text="@string/Email_Address" />
 
         <EditText
             android:id="@+id/Email_Address_"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/DarkRed"
             android:layout_alignLeft="@id/Password_"
             android:layout_alignBottom="@id/Email_Address"
             android:layout_toRightOf="@id/Email_Address"
@@ -199,8 +202,8 @@
             android:layout_marginTop="50dp"
             android:textSize="20dp"
             android:textStyle="bold"
-
-            android:text="Введите пароль" ></TextView>
+            android:textColor="@color/DarkRed"
+            android:text="@string/Password" ></TextView>
 
         <EditText
             android:id="@+id/Password_"
@@ -208,6 +211,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/Password"
             android:layout_marginStart="20dp"
+            android:textColor="@color/DarkRed"
             android:layout_toEndOf="@+id/Password"
             android:layout_toRightOf="@id/Password"
             android:minHeight="48dp"></EditText>
@@ -221,21 +225,20 @@
             android:layout_marginTop="50dp"
             android:textSize="20dp"
             android:textStyle="bold"
-
-            android:text="Согласие об обработке\nперсональных данных"/>
+            android:textColor="@color/DarkRed"
+            android:text="@string/Consent"/>
 
         <ImageButton
             android:id="@+id/Consent_"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/button_margin_width"
+            android:layout_height="@dimen/button_margin_height"
             android:layout_alignBottom="@id/Consent"
             android:layout_marginStart="30dp"
             android:layout_toEndOf="@id/Consent"
             android:layout_toRightOf="@id/Consent"
             android:contentDescription="@string/app_name"
-
+            android:backgroundTint="@color/Salmon"
             app:srcCompat="@drawable/free_icon_font_check_3917084" />
-
 
     </RelativeLayout>
 

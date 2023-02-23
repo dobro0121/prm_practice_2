@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">prm_practice_2</string>
-
+    <string name="Consent">Согласие на обработку\nперсональных данных</string>
+    <string name="Password">Введите пароль</string>
+    <string name="Email_Address">Введите Email</string>
+    <string name="Name">Введите имя</string>
+    <string name="Welcome">Добро пожаловать!</string>
 </resources>
