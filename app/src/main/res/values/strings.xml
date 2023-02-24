@@ -5,4 +5,7 @@
     <string name="Email_Address">Введите Email</string>
     <string name="Name">Введите имя</string>
     <string name="Welcome">Добро пожаловать!</string>
+    <string name="AccountEmail">Твой Email</string>
+    <string name="AccountPassword">Твой пароль</string>
+    <string name="textview">TextView</string>
 </resources>
