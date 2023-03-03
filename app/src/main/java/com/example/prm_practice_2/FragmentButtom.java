@@ -27,31 +27,23 @@ import com.example.prm_practice_2.databinding.FragmentProfileNameBinding;
 
 public class FragmentButtom extends Fragment {
 
-    private FragmentManager fragmentManager;
-    private FragmentButtomBinding bindinghere;
-    private MainActivity mainActivity;
-
+    public FragmentManager fragmentManager;
+    public FragmentButtomBinding bindinghere;
+    public FragmentProfileName fragmentProfileName;
     public FragmentButtom(){
         super(R.layout.fragment_buttom);
     }
 
     @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        mainActivity = (MainActivity) context;
-    }
-
-    @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fragmentProfileName = new FragmentProfileName();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        bindinghere = FragmentButtomBinding.inflate(inflater, container, false);
-
+        FragmentButtomBinding bindinghere = FragmentButtomBinding.inflate(inflater, container, false);
         return bindinghere.getRoot();
     }
-
 }
