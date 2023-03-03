@@ -1,33 +1,33 @@
 package com.example.prm_practice_2;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
     FragmentManager fragmentManager;
-
+    Fragment fragmentFirst, fragmentButtom, fragmentProfileName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(savedInstanceState == null){
-            // Создаем первый фрагмент и загружаем его в контейнер
-            BlankFragmentFirst fragmentFirst = new BlankFragmentFirst();
-            fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.main_fragment, BlankFragmentFirst.class, null)
-                    .commit();
 
-            // Создаем второй фрагмент и загружаем его в контейнер
-            FragmentButtom fragmentButtom = new FragmentButtom();
-            fragmentManager = getSupportFragmentManager();
+        fragmentFirst = new BlankFragmentFirst();
+        fragmentButtom = new FragmentButtom();
+        fragmentProfileName = new FragmentProfileName();
+
+        if(savedInstanceState == null){
+
+            // Создаем первый фрагмент и загружаем его в контейнер
+            fragmentManager = getSupportFragmentManager(); // добро пожаловать который
             fragmentManager.beginTransaction()
-                    .setReorderingAllowed(true)
-                    .add(R.id.menu_fragment, FragmentButtom.class, null)
+                    .replace(R.id.constraint_layout_main, new BlankFragmentFirst())
+                    .addToBackStack(null)
                     .commit();
         }
     }

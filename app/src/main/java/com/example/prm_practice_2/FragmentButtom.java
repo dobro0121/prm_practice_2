@@ -2,6 +2,7 @@ package com.example.prm_practice_2;
 
 import static android.app.Activity.RESULT_OK;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,16 +22,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.prm_practice_2.databinding.FragmentButtomBinding;
+import com.example.prm_practice_2.databinding.FragmentProfileNameBinding;
 
 
 public class FragmentButtom extends Fragment {
 
-    private static final int REQUEST_CODE = 123;
-    private final String TAG = this.getClass().getSimpleName();
-    private FragmentButtomBinding binding;
+    private FragmentManager fragmentManager;
+    private FragmentButtomBinding bindinghere;
+    private MainActivity mainActivity;
 
     public FragmentButtom(){
         super(R.layout.fragment_buttom);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mainActivity = (MainActivity) context;
     }
 
     @Override
@@ -39,14 +49,9 @@ public class FragmentButtom extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentButtomBinding.inflate(inflater, container, false);
+        bindinghere = FragmentButtomBinding.inflate(inflater, container, false);
 
-        //Инициализация ImageView картинкой с помощью ViewBinding
-        ImageView imageView = binding.stars;
-        Drawable drawable = getResources().getDrawable(R.drawable.free_icon_font_sparkles_6854012);
-        imageView.setImageDrawable(drawable);
-
-        return binding.getRoot();
+        return bindinghere.getRoot();
     }
 
 }
