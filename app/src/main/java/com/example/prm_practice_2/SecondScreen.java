@@ -25,7 +25,7 @@ public class SecondScreen extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-        fragmentManager = getParentFragmentManager();
+        /*fragmentManager = getParentFragmentManager();
         fragmentManager.setFragmentResultListener("go to personal data", this, ((requestKey, result) -> {
             String name = result.getString("name");
             TextView NameTextView = binding.NameOfAccount;
@@ -36,7 +36,7 @@ public class SecondScreen extends Fragment {
             String password = result.getString("password");
             TextView PasswordTextView = binding.PasswordOfAccount;
             PasswordTextView.setText(password);
-        }));
+        }));*/
     }
 
     @Override
@@ -45,7 +45,7 @@ public class SecondScreen extends Fragment {
 
         binding = SecondScreenBinding.inflate(inflater, container, false);
         binding.Person.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
+            /*Bundle bundle = new Bundle();
             // Переход со второго в первый фрагмент
             bundle.putString("name_", binding.NameOfAccount.getText().toString());
             bundle.putString("email_", binding.EmailOfAccount.getText().toString());
@@ -54,7 +54,7 @@ public class SecondScreen extends Fragment {
             fragmentManager.setFragmentResult("written data", bundle);
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.constraint_layout_main, new FirstScreen());
-            fragmentTransaction.addToBackStack(null).commit();
+            fragmentTransaction.addToBackStack(null).commit();*/
         });
         return binding.getRoot();
     }

@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/cinema_scroll"
+    android:name="com.example.prm_practice_2.ThirdScreen"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:layout="@layout/fragment_third_screen"
+    android:background="@color/Salmon"
     tools:context=".ThirdScreen">
 
     <TextView

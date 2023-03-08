@@ -34,105 +34,68 @@
             ></TextView>
 
         <TextView
-            android:id="@+id/Name"
+            android:id="@+id/Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Welcome"
             android:layout_marginLeft="40dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="@color/DarkRed"
-            android:text="@string/Name" />
-
-        <EditText
-            android:id="@+id/NameWrite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/PasswordWrite"
-            android:layout_alignBottom="@id/Name"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="50dp"
-            android:layout_toEndOf="@+id/Name"
-            android:layout_toRightOf="@id/Name"
-            android:minHeight="48dp"
-            android:textColor="@color/DarkRed"
-            tools:ignore="SpeakableTextPresentCheck"></EditText>
+            android:text="Что вы хотите выбрать?" />
 
         <TextView
-            android:id="@+id/Email_Address"
+            android:id="@+id/Film_Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Name"
+            android:layout_below="@id/Choice"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="50dp"
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/DarkRed"
-            android:text="@string/Email_Address" />
-
-        <EditText
-            android:id="@+id/EmailAddressWrite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/PasswordWrite"
-            android:layout_alignBottom="@id/Email_Address"
-            android:layout_toRightOf="@id/Email_Address"
-            android:minHeight="48dp"
-            android:textColor="@color/DarkRed"
-            tools:ignore="UnknownId,SpeakableTextPresentCheck"></EditText>
-
-        <TextView
-            android:id="@+id/Password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Email_Address"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="50dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/DarkRed"
-            android:text="@string/Password" ></TextView>
-
-        <EditText
-            android:id="@+id/PasswordWrite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/Password"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@+id/Password"
-            android:layout_toRightOf="@id/Password"
-            android:minHeight="48dp"
-            android:textColor="@color/DarkRed"
-            tools:ignore="SpeakableTextPresentCheck"></EditText>
-
-        <TextView
-            android:id="@+id/Consent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Password"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="50dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/DarkRed"
-            android:text="@string/Consent"
-            tools:ignore="UnknownId" />
+            android:text="Выбрать фильм" />
 
         <ImageButton
-            android:id="@+id/ConsentButton"
-            android:layout_width="@dimen/button_margin_width"
-            android:layout_height="@dimen/button_margin_height"
-            android:layout_alignBottom="@id/Consent"
-            android:layout_marginStart="33dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginBottom="0dp"
-            android:layout_toEndOf="@id/Consent"
-            android:layout_toRightOf="@id/Consent"
-            android:backgroundTint="@color/Salmon"
-            android:contentDescription="@string/app_name"
+            android:id="@+id/FilmButtonChoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/CinemaButtonChoice"
+            android:layout_alignBottom="@id/Film_Choice"
+            android:layout_toRightOf="@id/Film_Choice"
+            android:textColor="@color/DarkRed"
+            android:backgroundTint="@color/IndianRed"
             android:onClick="ButtonConsentClickHandler"
-            app:srcCompat="@drawable/free_icon_font_check_3917084" />
+            tools:ignore="UnknownId,SpeakableTextPresentCheck"
+            app:srcCompat="@drawable/free_icon_font_check_3917084"></ImageButton>
+
+        <TextView
+            android:id="@+id/Cinema_Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Film_Choice"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/DarkRed"
+            android:text="Выбрать кинотеатр" ></TextView>
+
+        <ImageButton
+            android:id="@+id/CinemaButtonChoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/Cinema_Choice"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/Cinema_Choice"
+            android:layout_toRightOf="@id/Cinema_Choice"
+            android:textColor="@color/DarkRed"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:backgroundTint="@color/IndianRed"
+            android:onClick="ButtonConsentClickHandler"
+            app:srcCompat="@drawable/free_icon_font_check_3917084"></ImageButton>
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

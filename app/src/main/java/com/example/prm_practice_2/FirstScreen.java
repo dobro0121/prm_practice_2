@@ -39,18 +39,9 @@ public class FirstScreen extends Fragment {
         Toast.makeText(getActivity(), "Fragment created", Toast.LENGTH_SHORT).show();
         Log.d("MyFragment", "Fragment created");
 
-        fragmentManager = getParentFragmentManager();
-        fragmentManager.setFragmentResultListener("written data", this, ((requestKey, result) ->{
-            EditText editname = binding.NameWrite;
-            EditText editemail = binding.EmailAddressWrite;
-            EditText editpass = (EditText) binding.PasswordWrite;
-            String name_ = result.getString("name_");
-            String email_ = result.getString("email_");
-            String password_ = result.getString("password_");
-            editname.setText(name_);
-            editemail.setText(email_);
-            editpass.setText(password_);
-        }));
+        /*fragmentManager = getParentFragmentManager();
+        fragmentManager.setFragmentResultListener("", this, ((requestKey, result) ->{
+        }));*/
     }
 
     @Override
@@ -58,15 +49,17 @@ public class FirstScreen extends Fragment {
                              Bundle savedInstanceState) {
         binding = FirstScreenBinding.inflate(inflater, container, false);
         //Программное задание метода обработчика событий с помощью ViewBinding
-        binding.ConsentButton.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("name", binding.NameWrite.getText().toString());
-            bundle.putString("email", binding.EmailAddressWrite.getText().toString());
-            bundle.putString("password", binding.PasswordWrite.getText().toString());
+        binding.FilmButtonChoice.setOnClickListener(v -> {
 
-            fragmentManager.setFragmentResult("go to personal data", bundle);
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.constraint_layout_main, new SecondScreen());
+            fragmentTransaction.addToBackStack(null).commit();
+        });
+
+        binding.CinemaButtonChoice.setOnClickListener(v -> {
+
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.constraint_layout_main, new ThirdScreen());
             fragmentTransaction.addToBackStack(null).commit();
         });
         Toast.makeText(getActivity(), "Fragment createdView", Toast.LENGTH_SHORT).show();
