@@ -17,16 +17,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentFirst = new BlankFragmentFirst();
+        fragmentFirst = new FirstScreen();
         fragmentButtom = new FragmentButtom();
-        fragmentProfileName = new FragmentProfileName();
+        fragmentProfileName = new SecondScreen();
 
         if(savedInstanceState == null){
 
             // Создаем первый фрагмент и загружаем его в контейнер
             fragmentManager = getSupportFragmentManager(); // добро пожаловать который
             fragmentManager.beginTransaction()
-                    .replace(R.id.constraint_layout_main, new BlankFragmentFirst())
+                    .replace(R.id.constraint_layout_main, new FirstScreen())
                     .addToBackStack(null)
                     .commit();
         }

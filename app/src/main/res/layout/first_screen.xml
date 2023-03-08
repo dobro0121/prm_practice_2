@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Salmon"
-    android:name="com.example.prm_practice_2.BlankFragmentFirst"
+    android:name="com.example.prm_practice_2.FirstScreen"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".BlankFragmentFirst"
-    tools:layout="@layout/fragment_blank_first">
+    tools:context=".FirstScreen"
+    tools:layout="@layout/first_screen"
+    tools:ignore="MissingDefaultResource">
 
     <RelativeLayout
         android:layout_width="match_parent"

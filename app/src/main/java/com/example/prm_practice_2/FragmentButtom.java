@@ -22,14 +22,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.prm_practice_2.databinding.FragmentButtomBinding;
-import com.example.prm_practice_2.databinding.FragmentProfileNameBinding;
+import com.example.prm_practice_2.databinding.SecondScreenBinding;
 
 
 public class FragmentButtom extends Fragment {
 
     public FragmentManager fragmentManager;
     public FragmentButtomBinding bindinghere;
-    public FragmentProfileName fragmentProfileName;
+    public SecondScreen second_screen;
     public FragmentButtom(){
         super(R.layout.fragment_buttom);
     }
@@ -37,7 +37,7 @@ public class FragmentButtom extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fragmentProfileName = new FragmentProfileName();
+        second_screen = new SecondScreen();
     }
 
     @Override

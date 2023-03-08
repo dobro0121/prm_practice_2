@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Salmon"
-    android:name="com.example.prm_practice_2.FragmentProfileName"
+    android:name="com.example.prm_practice_2.SecondScreen"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:layout="@layout/fragment_profile_name"
-    tools:context=".FragmentProfileName">
+    tools:layout="@layout/second_screen"
+    tools:context=".SecondScreen"
+    tools:ignore="MissingDefaultResource">
 
     <TextView
         android:id="@+id/NameOfAccount"

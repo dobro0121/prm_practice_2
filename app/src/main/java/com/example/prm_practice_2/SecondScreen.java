@@ -11,14 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.prm_practice_2.databinding.FragmentButtomBinding;
-import com.example.prm_practice_2.databinding.FragmentProfileNameBinding;
+import com.example.prm_practice_2.databinding.SecondScreenBinding;
 
-public class FragmentProfileName extends Fragment {
-    FragmentProfileNameBinding binding;
+public class SecondScreen extends Fragment {
+    SecondScreenBinding binding;
     FragmentManager fragmentManager;
-    public FragmentProfileName() {
-        super(R.layout.fragment_profile_name);
+    public SecondScreen() {
+        super(R.layout.second_screen);
     }
 
     @Override
@@ -44,7 +43,7 @@ public class FragmentProfileName extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = FragmentProfileNameBinding.inflate(inflater, container, false);
+        binding = SecondScreenBinding.inflate(inflater, container, false);
         binding.Person.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             // Переход со второго в первый фрагмент
@@ -54,7 +53,7 @@ public class FragmentProfileName extends Fragment {
 
             fragmentManager.setFragmentResult("written data", bundle);
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.constraint_layout_main, new BlankFragmentFirst());
+            fragmentTransaction.replace(R.id.constraint_layout_main, new FirstScreen());
             fragmentTransaction.addToBackStack(null).commit();
         });
         return binding.getRoot();

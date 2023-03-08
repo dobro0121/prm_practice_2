@@ -15,14 +15,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.prm_practice_2.databinding.FragmentBlankFirstBinding;
-public class BlankFragmentFirst extends Fragment {
+import com.example.prm_practice_2.databinding.FirstScreenBinding;
+public class FirstScreen extends Fragment {
 
     private FragmentManager fragmentManager;
-    private FragmentBlankFirstBinding binding;
+    private FirstScreenBinding binding;
 
-    public BlankFragmentFirst(){
-        super(R.layout.fragment_blank_first);
+    public FirstScreen(){
+        super(R.layout.first_screen);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class BlankFragmentFirst extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentBlankFirstBinding.inflate(inflater, container, false);
+        binding = FirstScreenBinding.inflate(inflater, container, false);
         //Программное задание метода обработчика событий с помощью ViewBinding
         binding.ConsentButton.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
@@ -66,7 +66,7 @@ public class BlankFragmentFirst extends Fragment {
 
             fragmentManager.setFragmentResult("go to personal data", bundle);
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.constraint_layout_main, new FragmentProfileName());
+            fragmentTransaction.replace(R.id.constraint_layout_main, new SecondScreen());
             fragmentTransaction.addToBackStack(null).commit();
         });
         Toast.makeText(getActivity(), "Fragment createdView", Toast.LENGTH_SHORT).show();
