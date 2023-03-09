@@ -39,9 +39,9 @@ public class FirstScreen extends Fragment {
         Toast.makeText(getActivity(), "Fragment created", Toast.LENGTH_SHORT).show();
         Log.d("MyFragment", "Fragment created");
 
-        /*fragmentManager = getParentFragmentManager();
+        fragmentManager = getParentFragmentManager();
         fragmentManager.setFragmentResultListener("", this, ((requestKey, result) ->{
-        }));*/
+        }));
     }
 
     @Override
