@@ -28,46 +28,43 @@ public class FirstScreen extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        Toast.makeText(getActivity(), "Fragment attached", Toast.LENGTH_SHORT).show();
-        Log.d("MyFragment", "Fragment attached");
+
+        //Toast.makeText(getActivity(), "Fragment attached", Toast.LENGTH_SHORT).show();
+        //Log.d("MyFragment", "Fragment attached");
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Toast.makeText(getActivity(), "Fragment created", Toast.LENGTH_SHORT).show();
-        Log.d("MyFragment", "Fragment created");
+        //Toast.makeText(getActivity(), "Fragment created", Toast.LENGTH_SHORT).show();
+        //Log.d("MyFragment", "Fragment created");
 
-        fragmentManager = getParentFragmentManager();
-        fragmentManager.setFragmentResultListener("", this, ((requestKey, result) ->{
-        }));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FirstScreenBinding.inflate(inflater, container, false);
-        //Программное задание метода обработчика событий с помощью ViewBinding
-        binding.FilmButtonChoice.setOnClickListener(v -> {
 
+        binding.FilmButtonChoice.setOnClickListener(v -> {
+            fragmentManager = getParentFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.constraint_layout_main, new SecondScreen());
             fragmentTransaction.addToBackStack(null).commit();
         });
 
         binding.CinemaButtonChoice.setOnClickListener(v -> {
-
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.constraint_layout_main, new ThirdScreen());
             fragmentTransaction.addToBackStack(null).commit();
         });
-        Toast.makeText(getActivity(), "Fragment createdView", Toast.LENGTH_SHORT).show();
-        Log.d("MyFragment", "Fragment createdView");
+        //Toast.makeText(getActivity(), "Fragment createdView", Toast.LENGTH_SHORT).show();
+        //Log.d("MyFragment", "Fragment createdView");
         return binding.getRoot();
     }
 
-    @Override
+    /*@Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Toast.makeText(getActivity(), "Fragment activityCreated", Toast.LENGTH_SHORT).show();
@@ -128,5 +125,5 @@ public class FirstScreen extends Fragment {
         super.onDetach();
         Toast.makeText(getActivity(), "Fragment detached", Toast.LENGTH_SHORT).show();
         Log.d("MyFragment", "Fragment detached");
-    }
+    }*/
 }

@@ -71,18 +71,6 @@
             tools:ignore="UnknownId,SpeakableTextPresentCheck"
             app:srcCompat="@drawable/free_icon_font_check_3917084"></ImageButton>
 
-        <TextView
-            android:id="@+id/Cinema_Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Film_Choice"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="50dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/DarkRed"
-            android:text="Выбрать кинотеатр" ></TextView>
-
         <ImageButton
             android:id="@+id/CinemaButtonChoice"
             android:layout_width="match_parent"
@@ -96,6 +84,18 @@
             android:backgroundTint="@color/IndianRed"
             android:onClick="ButtonConsentClickHandler"
             app:srcCompat="@drawable/free_icon_font_check_3917084"></ImageButton>
+
+        <TextView
+            android:id="@+id/Cinema_Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Film_Choice"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/DarkRed"
+            android:text="Выбрать кинотеатр" ></TextView>
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
